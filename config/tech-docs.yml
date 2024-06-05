@@ -1,5 +1,5 @@
 # Human read-able name for this site, displayed in the header bar
-service_name:  Notice of Presentation Waiver Checker Service Guide
+service_name: Notice of Presentation Waiver Checker Service Guide
 
 # The route that will be used to access this site (with tailing slash)
 service_link: /guides/uknw-auth-checker-api-service-guide/

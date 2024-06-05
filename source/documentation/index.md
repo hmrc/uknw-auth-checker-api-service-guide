@@ -1,9 +1,9 @@
 ---
-title: Notice of Presentation Waiver Service Guide
+title: Notice of Presentation Waiver Checker Service Guide
 weight: 1
 ---
 
-# Notice of Presentation Waiver Service Guide
+# Notice of Presentation Waiver Checker Service Guide
 
 Version 1.0 issued 1 January 2020
 ***
