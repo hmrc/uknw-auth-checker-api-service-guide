@@ -1,0 +1,4 @@
+->      /                                                  health.Routes
+GET     /guides/uknw-auth-checker-api-service-guide           controllers.Default.redirect(to = "/guides/uknw-auth-checker-api-service-guide/")
+GET     /guides/uknw-auth-checker-api-service-guide/          controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/uknw-auth-checker-api-service-guide/*file     controllers.Assets.at(path="/public", file)
