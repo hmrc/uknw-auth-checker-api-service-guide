@@ -1,30 +1,4 @@
-# Service Guides/Roadmaps
-
-## Overview
-
-Service Guides are created using GDS [Tech Docs Templates](https://github.com/alphagov/tech-docs-template).
-The generated HTML files are then served by a simple Scala Play application so that they can be deployed
-as an MDTP microservice.
-
-Examples of Service Guides can be seen in [API Documentation in Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/api).
-
-## Getting started
-
-Read [Tech Docs Templates][tdt] and [Documentation on using Tech Docs Templates](https://tdt-documentation.london.cloudapps.digital/#technical-documentation-template).
-
-### Setup the Scala Application
-
-The _serviceName_ is generally the same name as the git repository.
-
-* Edit `./build.sbt` change `val appName = "service-guide-skeleton"` to your _serviceName_.
-* Edit `./conf/application.conf` change `appName=service-guide-skeleton` to your _serviceName_.
-* Edit `./conf/prod.routes` change `/guides/example-service-guide` to the route that will be used to access the service guide.
-
-### Setup Tech Docs
-
-* Edit `config/tech-docs.yml`
-  * Change `service_name` to a human-readable name of your service guide
-  * Change `service_link`, to the route that will be used to access the service guide. (same as what was added to `./conf/prod.routes`)
+# Service Guides
 
 ## Editing Service Guide pages
 
