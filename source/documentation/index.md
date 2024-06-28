@@ -1,10 +1,10 @@
 ---
-title: Notice of Presentation Waiver Checker Service Guide
+title: Notification of Presentation Waiver Checker Service Guide
 weight: 1
 ---
 Version 1.0 issued 24 June 2024
 
-# Notice of Presentation (NOP) Waiver Checker Service Guide
+# Notification of Presentation (NOP) Waiver Checker Service Guide
 
 This service guide explains how to use the NOP Waiver Checker API. It is written for Community System Providers (CSP's) and software developers to learn about the processes involved in passing Economic Operators Registration and Identification (EORI) numbers to check NOP Waiver validity.
 
