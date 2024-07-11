@@ -20,10 +20,18 @@ The API follows REST principles and has a single POST method endpoint that retur
 
 EORI stands for Economic Operators Registration and Identification. It is a unique identification number used by customs authorities across the European Union (EU) to track imports and exports. Any business or individual shipping goods internationally will have an EORI number. This API uses this number to check the authorisation of NOP Waivers. This system replaced the older Trader's Unique Reference Number (TURN) system. For those in the UK, HM Revenue and Customs (HMRC) issues these numbers.
 
-A breakdown of the EORI number format for UK VAT-registered businesses:
-- GB: Indicates that the business is based in the UK.
+A typical EORI number for UK VAT-registered businesses is as follows:
+
+```text
+GB205672212000
+```
+
+Below is a breakdown of this EORI number format:
+
+- GB: Indicates that the business is UK-based.
 - 205672212: Represents the business's VAT Registration Number.
-- 000: These three zones are always added to the end of a UK EORI number.
+- 000: These three zeros are always added to the end of a UK EORI number.
+- Total number of characters permitted for the EORI (including the prefix GB or XI) is between 12 and 15.
 
 In summary, having an EORI number is essential for anyone involved in international trade, as it allows customs authorities to monitor and track shipments effectively.
 
