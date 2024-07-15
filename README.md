@@ -1,13 +1,5 @@
 # Notification of Presentation Wavier Service Guide
 
-## Editing Service Guide pages
-
-Template files are located in `./source/documentation`. All pages are written in [Markdown](https://en.wikipedia.org/wiki/Markdown).
-
-To add new pages simply copy and paste one of the existing pages, it will automatically appear in the menu.
-
-`example-page.html.md.erb` provides examples and best practices styles.
-
 ## Previewing
 
 #### Option 1 - Using Docker (recommended)
