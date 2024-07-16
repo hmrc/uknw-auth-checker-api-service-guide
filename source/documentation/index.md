@@ -57,7 +57,9 @@ To develop using the NOP Waiver Checker API, you must:
 - be familiar with HTTP, RESTful services, JSON and OAuth2
 - be registered as a developer on the HMRC Developer Hub
 
-You can view all the applications you have currently registered on the Developer Hub Applications page, where you can also administer API subscriptions and application credentials.
+Each application you register will be assigned an HMRC 'ApplicationId'.
+
+You can access all the applications you have registered on [Developer Hub Applications](/developer/applications). There, you can administer things like API subscriptions and [application credentials](/api-documentation/docs/authorisation/credentials).
 
 ### Making API requests
 
@@ -85,3 +87,19 @@ A detailed description of the error responses for this API can be found in the [
 Each software house should register a single application with HMRC. This application will be used to identify the software house during the OAuth 2.0 grant flow and will also be used in subsequent per user API calls. We limit the number of requests that each application can make. This protects our backend service against excessive load and encourages real-time API calls over batch processing.
 
 We set limits based on anticipated loads and peaks. Our standard limit is 3 requests per second per application. If you believe that your application will sustain traffic load above this value, contact the SDS Team at email [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk)
+
+## Changelogs
+
+### API changelog
+
+The [NOP API Changelog](https://github.com/hmrc/uknw-auth-checker-api/blob/main/CHANGELOG.md) (GitHub) provides detailed and comprehensive information about API changes.
+
+### Document changelog
+
+Below is a summary of updates to this service guide.
+
+**11 July 2024**
+- Updated content for What is an EORI number section
+
+**24 June 2024**
+- Initial draft created
