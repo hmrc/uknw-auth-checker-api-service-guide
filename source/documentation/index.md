@@ -35,6 +35,20 @@ Below is a breakdown of this EORI number format:
 
 In summary, having an EORI number is essential for anyone involved in international trade, as it allows customs authorities to monitor and track shipments effectively.
 
+## API Workflow
+
+![NOP Waiver Checker API Sequence Diagram](/images/NOP_Authorisation__Sequence_diagram_Service_Guide.png "NOP Waiver Checker API Sequence Diagram.")
+
+This sequence diagram outlines the process for checking authorisations using the NOP Waiver Checker API. Below is an explanation of each step involved in the workflow:
+
+**1. Request access token:** The third-party software asks the API platform for an access token by sending a GET request. This step is secure and private.
+
+**2. Receive access token:** The API platform provides an access token, which is valid for 4 hours. This token will be used to verify future requests.
+
+**3. Submit authorisation request:** Using the access token, the third-party software sends a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint.
+
+**4. Receive authorisation result:** The NOP Waiver Checker API processes the request and replies with an HTTP 200 status code and a JSON response containing the authorisation result.
+
 ## API Status
 
 This version of the NOP Waiver Checker API:
