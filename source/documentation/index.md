@@ -112,6 +112,9 @@ The [NOP API Changelog](https://github.com/hmrc/uknw-auth-checker-api/blob/main/
 
 Below is a summary of updates to this service guide.
 
+**18 July 2024**
+- Added API Workflow section with sequence diagram and description
+
 **11 July 2024**
 - Updated content for What is an EORI number section
 
