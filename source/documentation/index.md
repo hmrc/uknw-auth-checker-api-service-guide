@@ -124,11 +124,11 @@ Below is a summary of updates to this service guide.
 
 **18 July 2024**
 
-- Added [API Workflow section](/#api-workflow) with sequence diagram and description
+- Added [API Workflow section](/uknw-auth-checker-api-service-guide/#api-workflow) with sequence diagram and description
 
 **11 July 2024**
 
-- Updated content for [What is an EORI number section](/#overview)
+- Updated content for [What is an EORI number section](/uknw-auth-checker-api-service-guide/#overview)
 
 **24 June 2024**
 
