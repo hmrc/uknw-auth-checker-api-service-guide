@@ -45,13 +45,13 @@ In summary, having an EORI number is essential for anyone involved in internatio
 
 This sequence diagram outlines the process for checking authorisations using the NOP Waiver Checker API. Below is an explanation of each step involved in the workflow:
 
-**1. Request access token:** The third-party software asks the API platform for an access token by sending a GET request. This step is secure and private.
+1. **Request access token:** The third-party software asks the API platform for an access token by sending a GET request. This step is secure and private.
 
-**2. Receive access token:** The API platform provides an access token, which is valid for 4 hours. This token will be used to verify future requests.
+2. **Receive access token:** The API platform provides an access token, which is valid for 4 hours. This token will be used to verify future requests.
 
-**3. Submit authorisation request:** Using the access token, the third-party software sends a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint.
+3. **Submit authorisation request:** Using the access token, the third-party software sends a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint.
 
-**4. Receive authorisation result:** The NOP Waiver Checker API processes the request and replies with an HTTP 200 status code and a JSON response containing the authorisation result.
+4. **Receive authorisation result:** The NOP Waiver Checker API processes the request and replies with an HTTP 200 status code and a JSON response containing the authorisation result.
 
 ## API Status
 
@@ -67,13 +67,21 @@ Use this API to:
 - Request the NOP Waiver authorisation status of 1-3000 EORIs passed as an array.
 - Run tests in the HMRC sandbox environment.
 
-## Getting started 
+## Developer Setup
 
-### Developer Setup
+In the context of this API, the term "developer" refers to software developers who either work directly for CSPs or are contracted to CSPs through third parties.
+
+### Getting started
+
+Developers must follow the steps below before you can use your software in the test and live environment and access this API:
+
+1. **[Register for a developer account](https://developer.service.hmrc.gov.uk/developer/registration)** on the HMRC Developer Hub. 
+2. To **create** a standard application, follow the instructions on [Using the Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub)
+3. As the API is private, please contact [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk) with your sandbox application ID and name. The Software Developer Support (SDS) Team will then **subscribe** your sandbox application to the NOP Waiver Checker API.
+4. **Learn** about the [application-restricted endpoints](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/application-restricted-endpoints) featured in this API. It uses the open standard [OAuth2.0](https://oauth.net/2/) with the [Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/) to generate an access token.
 
 To develop using the NOP Waiver Checker API, you must:
 
-- be a CSP
 - be familiar with HTTP, RESTful services, JSON and OAuth2
 - be registered as a developer on the HMRC Developer Hub
 
@@ -100,6 +108,69 @@ Sandbox	https://test-api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-w
 Production https://api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-waiver/
 ```
 
+## End-to-end User Journeys
+
+- [Developer journey overview](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview)
+- [CSP journey overview](/guides/uknw-auth-checker-api-service-guide/#csp-journey-overview)
+
+### Developer journey overview
+
+Follow this end-to-end journey to setup your developer environment, request NOP Waiver authorisation using EORIs, and move your application to production.
+
+1. **Complete** [Developer setup](/guides/uknw-auth-checker-api-service-guide/#developer-setup) instructions.
+2. **Read** [Making API requests](/guides/uknw-auth-checker-api-service-guide/#making-api-requests) guidance.
+3. **Request access token:** [Send a POST request to generate an access token](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) from the API platform.
+
+Example of a POST request to generate an access token:
+
+```code
+curl -X POST -H "content-type: application/x-www-form-urlencoded" --data \
+"client_secret=[YOUR-CLIENT-SECRET]\
+&client_id=[YOUR-CLIENT-ID]\
+&grant_type=client_credentials\
+https://test-api.service.hmrc.gov.uk/oauth/token
+```
+4. **Receive access token:** [The response](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) contains the access token used to call the API. Store the access token received.
+5. **Test** your application in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing). 
+**Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
+6. **Submit authorisation request:** Send a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint. Include an array of EORI numbers between 1 and 3000.
+
+Example of a POST request:
+
+```code
+{
+	"eoris": [
+		"GB123123123333"
+	]
+}
+```
+7. **Receive authorisation result:** Check the response from the API for the authorisation result.
+Example of a successful response:
+
+```code
+{
+	"date": "2024-02-01T14:15:22Z",
+	"eoris": [
+		{
+			"eori": "GB123123123123",
+			"authorised": true
+		}
+	]
+}
+```
+8. **Complete** a form when you require live production credentials. You can find this under the [Applications tab](/developer/applications) in the Manage Applications section of the Developer Hub by clicking the 'Add an application to Production' link. 
+9. **Implement API** link directly into a user interface for CSPs.
+
+### CSP journey overview
+
+1. **Integrate the API:** Developers should follow the [Developer journey overview](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) to integrate the NOP Waiver Checker API into your software with a corresponding user interface (UI). 
+2. **Trader completes C21 form:** To send goods between GB and NI, a trader must complete and submit a [C21 form](https://www.gov.uk/government/publications/import-and-export-customs-clearance-request-c21). 
+3. **Check trader credentials:** If the trader does not have [Authorised Economic Operator status](https://www.gov.uk/government/publications/check-if-a-business-holds-authorised-economic-operator-status), their NOP Waiver authorisation status must be checked.  
+4. **Access the API:** Use the UI created by your developers to access the API.
+5. **Check NOP Waiver status:** Use the API to verify the traders' NOP Wavier authorisation.
+6. **Authorise EIDR:** Authorise the trader for Entry in Declarants Records (EIDR) once NOP Waiver status is verified.
+7. **Goods are shipped:** The trader can now ship the goods between GB and NI.
+
 ## Error Responses
 
 A detailed description of the error responses for this API can be found in the [NOP Waiver Checker API v1.0 reference guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0).
@@ -122,13 +193,18 @@ The [NOP API Changelog](https://github.com/hmrc/uknw-auth-checker-api/blob/main/
 
 Below is a summary of updates to this service guide.
 
+**6 August 2024**
+
+- Edited [Getting started section](/guides/uknw-auth-checker-api-service-guide/#getting-started) to include step-by-step instructions for developers
+- Added [End-to-end User Journeys section]() with detailed [developer](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) and [CSP](/guides/uknw-auth-checker-api-service-guide/#csp-journey-overview) journey overviews
+
 **18 July 2024**
 
 - Added [API Workflow section](/guides/uknw-auth-checker-api-service-guide/#api-workflow) with sequence diagram and description
 
 **11 July 2024**
 
-- Updated content for [What is an EORI number section](/guides/uknw-auth-checker-api-service-guide/#overview)
+- Updated content for [What is an EORI number section](/guides/uknw-auth-checker-api-service-guide/#what-is-an-eori-number)
 
 **24 June 2024**
 
