@@ -100,6 +100,7 @@ For details, see the [NOP Waiver Checker API v1.0 Reference Guide](/api-document
 **Note:** The NOP Waiver API is restricted to CSPs and the above link will not be accessible to other users.
 
 The base URLs of the sandbox and production environments are as follows:
+
 ```code
 Sandbox	https://test-api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-waiver/
 
@@ -118,6 +119,7 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 1. **Complete** [Developer setup](/guides/uknw-auth-checker-api-service-guide/#developer-setup) instructions.
 2. **Read** [Making API requests](/guides/uknw-auth-checker-api-service-guide/#making-api-requests) guidance.
 3. **Request access token:** [Send a POST request to generate an access token](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) from the API platform.<br> Example of a POST request to generate an access token:
+
 	```code
 	curl -X POST -H "content-type: application/x-www-form-urlencoded" --data \
 	"client_secret=[YOUR-CLIENT-SECRET] \
@@ -129,6 +131,7 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 5. **Test** your application in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).<br> **Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
 6. **Submit authorisation request:** Send a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint. Include an array of EORI numbers between 1 and 3000.<br>
 Example of a POST request for a single EORI number:
+
 	```code
 	{
 		"eoris": [
@@ -138,6 +141,7 @@ Example of a POST request for a single EORI number:
 	```
 7. **Receive authorisation result:** Check the response from the API for the authorisation result.<br>
 Example of a successful response:
+
 	```code
 	{
 		"date": "2024-02-01T14:15:22Z",
