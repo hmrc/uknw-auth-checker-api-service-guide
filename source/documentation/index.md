@@ -25,7 +25,6 @@ The API follows REST principles and has a single POST method endpoint that retur
 EORI stands for Economic Operators Registration and Identification. It is a unique identification number used by customs authorities across the European Union (EU) to track imports and exports. Any business or individual shipping goods internationally will have an EORI number. This API uses this number to check the authorisation of NOP Waivers. This system replaced the older Trader's Unique Reference Number (TURN) system. For those in the UK, HM Revenue and Customs (HMRC) issues these numbers.
 
 A typical EORI number for UK VAT-registered businesses is as follows:
-
 ```text
 GB205672212000
 ```
@@ -101,7 +100,6 @@ For details, see the [NOP Waiver Checker API v1.0 Reference Guide](/api-document
 **Note:** The NOP Waiver API is restricted to CSPs and the above link will not be accessible to other users.
 
 The base URLs of the sandbox and production environments are as follows:
-
 ```code
 Sandbox	https://test-api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-waiver/
 
@@ -119,45 +117,38 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 
 1. **Complete** [Developer setup](/guides/uknw-auth-checker-api-service-guide/#developer-setup) instructions.
 2. **Read** [Making API requests](/guides/uknw-auth-checker-api-service-guide/#making-api-requests) guidance.
-3. **Request access token:** [Send a POST request to generate an access token](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) from the API platform.
-
-Example of a POST request to generate an access token:
-
-```code
-curl -X POST -H "content-type: application/x-www-form-urlencoded" --data \
-"client_secret=[YOUR-CLIENT-SECRET]\
-&client_id=[YOUR-CLIENT-ID]\
-&grant_type=client_credentials\
-https://test-api.service.hmrc.gov.uk/oauth/token
-```
+3. **Request access token:** [Send a POST request to generate an access token](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) from the API platform.<br> Example of a POST request to generate an access token:
+	```code
+	curl -X POST -H "content-type: application/x-www-form-urlencoded" --data \
+	"client_secret=[YOUR-CLIENT-SECRET] \
+	&client_id=[YOUR-CLIENT-ID] \
+	&grant_type=client_credentials \
+	https://test-api.service.hmrc.gov.uk/oauth/token
+	```
 4. **Receive access token:** [The response](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) contains the access token used to call the API. Store the access token received.
-5. **Test** your application in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing). 
-**Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
-6. **Submit authorisation request:** Send a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint. Include an array of EORI numbers between 1 and 3000.
-
-Example of a POST request:
-
-```code
-{
-	"eoris": [
-		"GB123123123333"
-	]
-}
-```
-7. **Receive authorisation result:** Check the response from the API for the authorisation result.
+5. **Test** your application in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).<br> **Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
+6. **Submit authorisation request:** Send a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint. Include an array of EORI numbers between 1 and 3000.<br>
+Example of a POST request for a single EORI number:
+	```code
+	{
+		"eoris": [
+			"GB123123123333"
+		]
+	}
+	```
+7. **Receive authorisation result:** Check the response from the API for the authorisation result.<br>
 Example of a successful response:
-
-```code
-{
-	"date": "2024-02-01T14:15:22Z",
-	"eoris": [
-		{
-			"eori": "GB123123123123",
-			"authorised": true
-		}
-	]
-}
-```
+	```code
+	{
+		"date": "2024-02-01T14:15:22Z",
+		"eoris": [
+			{
+				"eori": "GB123123123123",
+				"authorised": true
+			}
+		]
+	}
+	```
 8. **Complete** a form when you require live production credentials. You can find this under the [Applications tab](/developer/applications) in the Manage Applications section of the Developer Hub by clicking the 'Add an application to Production' link. 
 9. **Implement API** link directly into a user interface for CSPs.
 
