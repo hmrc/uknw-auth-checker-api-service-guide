@@ -14,26 +14,28 @@ It is also intended to help software developers and others involved in integrati
 
 ## Overview
 
-This API allows CSPs to check if traders have a valid NOP Waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from GB-NI. 
+This API allows CSPs to check if traders have a valid NOP Waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from Great Britain to Northern Ireland. 
 
 The API follows REST principles and has a single POST method endpoint that returns the data in JSON format. It uses standard HTTP error response codes. Use this API to request the NOP Waiver authorisation status of between 1 and 3000 EORI numbers passed as an array. 
 
-**Note:** The API endpoint relates only to Great Britain and Northern Ireland.
+**Note:** The API endpoint relates only to GB and NI.
 
 ### What is an EORI number?
 
 EORI stands for Economic Operators Registration and Identification. It is a unique identification number used by customs authorities across the European Union (EU) to track imports and exports. Any business or individual shipping goods internationally will have an EORI number. This API uses this number to check the authorisation of NOP Waivers. This system replaced the older Trader's Unique Reference Number (TURN) system. For those in the UK, HM Revenue and Customs (HMRC) issues these numbers.
 
 A typical EORI number for UK VAT-registered businesses is as follows:
+
 ```text
-GB205672212000
+GB205672212000	# EORI originating in GB (Wales, England or Scotland)
+XI347643313000  # EORI originating in NI
 ```
 
 Below is a breakdown of this EORI number format:
 
-- GB: Indicates that the business is UK-based.
-- 205672212: Represents the business's VAT Registration Number.
-- 000: These three zeros are always added to the end of a UK EORI number.
+- GB or XI: Indicates that the business is based either in GB or NI (XI).
+- 205672212 or 347643313: Represents the business's VAT Registration Number.
+- 000: These three zeros are always added to the end of an EORI number.
 - Total number of characters permitted for the EORI (including the prefix GB or XI) is between 12 and 15.
 
 In summary, having an EORI number is essential for anyone involved in international trade, as it allows customs authorities to monitor and track shipments effectively.
