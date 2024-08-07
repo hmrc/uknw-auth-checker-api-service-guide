@@ -135,11 +135,15 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 Example of a POST request for a single EORI number:
 
 	```code
-	{
-		"eoris": [
-			"GB123123123333"
-		]
-	}
+	curl -XPOST \
+		-H 'Accept: application/vnd.hmrc.1.0+json' \
+		-H 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+		-H "Content-type: application/json" \
+		-d '{
+		    "eoris": [
+			"GB123123123000" 
+			] 
+}' 'https://test-api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-waiver/authorisations' 
 	```
 7. **Receive authorisation result:** Check the response from the API for the authorisation result.<br>
 Example of a successful response:
@@ -149,7 +153,7 @@ Example of a successful response:
 		"date": "2024-02-01T14:15:22Z",
 		"eoris": [
 			{
-				"eori": "GB123123123123",
+				"eori": "GB123123123000",
 				"authorised": true
 			}
 		]
