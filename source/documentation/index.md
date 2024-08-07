@@ -133,7 +133,6 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 Example of a POST request for a single EORI number:
 
 	```code
- 	{
 	curl -XPOST \
 		"eoris": [
 		-H 'Accept: application/vnd.hmrc.1.0+json' \
@@ -141,7 +140,6 @@ Example of a POST request for a single EORI number:
 		-H 'Authorization: Bearer YOUR_BEARER_TOKEN' \
 		]
 		-H "Content-type: application/json" \
-	}
 		-d '{
 			"eoris": [
 			"GB123123123000"
