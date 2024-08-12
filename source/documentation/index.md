@@ -77,7 +77,7 @@ In the context of this API, the term "developer" refers to software developers w
 Developers must follow the steps below before you can use your software in the test and live environment and access this API:
 
 1. **[Register for a developer account](https://developer.service.hmrc.gov.uk/developer/registration)** on the HMRC Developer Hub. 
-2. To **create** a standard application, follow the instructions on [Using the Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub)
+2. To **create** a sandbox application, follow the instructions on [Using the Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub)
 3. As the API is private, please contact [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk) with your sandbox application ID and name. The Software Developer Support (SDS) Team will then **subscribe** your sandbox application to the NOP waiver checker API.
 4. **Learn** about the [application-restricted endpoints](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/application-restricted-endpoints) featured in this API. It uses the open standard [OAuth2.0](https://oauth.net/2/) with the [Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/) to generate an access token.
 
@@ -130,7 +130,7 @@ Follow this end-to-end journey to setup your developer environment, request NOP 
 	https://test-api.service.hmrc.gov.uk/oauth/token
 	```
 4. **Receive access token:** [The response](/api-documentation/docs/authorisation/application-restricted-endpoints#getting-access-token) contains the access token used to call the API. Store the access token received.
-5. **Test** your application in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).<br> **Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
+5. Get your application ready for **testing** in the sandbox environment by following the steps on [Testing in the Sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).<br> **Note:** This API does not feature user-restricted endpoints, please disregard any information on this.
 6. **Submit authorisation request:** Send a POST request to the `/customs/uk-notice-of-presentation-waiver/authorisations` endpoint. Include an array of EORI numbers between 1 and 3000.<br>
 Example of a POST request for a single EORI number:
 
@@ -164,6 +164,8 @@ Example of a successful response:
 
 ### CSP journey overview
 
+This is a high-level overview of how to use this API to check the authorisation of traders' NOP waivers.
+
 1. **Integrate the API:** Developers should follow the [Developer journey overview](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) to integrate the NOP waiver checker API into your software with a corresponding user interface (UI). 
 2. **Trader completes C21 form:** To send goods between GB and NI, a trader must complete and submit a [C21 form](https://www.gov.uk/government/publications/import-and-export-customs-clearance-request-c21). 
 3. **Check trader credentials:** If the trader does not have [Authorised Economic Operator status](https://www.gov.uk/government/publications/check-if-a-business-holds-authorised-economic-operator-status), their NOP waiver authorisation status must be checked.  
@@ -184,6 +186,14 @@ Each software house should register a single application with HMRC. This applica
 
 We set limits based on anticipated loads and peaks. Our standard limit is 3 requests per second per application. If you believe that your application will sustain traffic load above this value, contact the SDS Team at email [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk)
 
+## Getting help and support
+
+Before contacting us, find out if there is planned API downtime or a technical issue by checking [HMRC API Platform Status](https://api-platform-status.production.tax.service.gov.uk/).
+
+If you have specific questions about the NOP waiver checker API, [contact our Software Developer Support (SDS) Team](https://developer.service.hmrc.gov.uk/developer/support). You'll get an initial response within 2 working days.
+
+You can also email questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We might ask for more detailed information when we respond.
+
 ## Changelogs
 
 ### API changelog
@@ -194,10 +204,14 @@ The [NOP API Changelog](https://github.com/hmrc/uknw-auth-checker-api/blob/main/
 
 Below is a summary of updates to this service guide.
 
+**12 August 2024**
+
+- Added [Getting help and support section](/guides/uknw-auth-checker-api-service-guide/#getting-help-and-support)
+
 **6 August 2024**
 
 - Edited [Getting started section](/guides/uknw-auth-checker-api-service-guide/#getting-started) to include step-by-step instructions for developers
-- Added [End-to-end user journeys section]() with detailed [developer](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) and [CSP](/guides/uknw-auth-checker-api-service-guide/#csp-journey-overview) journey overviews
+- Added [End-to-end user journeys section](/guides/uknw-auth-checker-api-service-guide/#end-to-end-user-journeys) with detailed [developer](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) and [CSP](/guides/uknw-auth-checker-api-service-guide/#csp-journey-overview) journey overviews
 
 **18 July 2024**
 
