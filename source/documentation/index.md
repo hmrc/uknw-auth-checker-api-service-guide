@@ -186,6 +186,14 @@ Each software house should register a single application with HMRC. This applica
 
 We set limits based on anticipated loads and peaks. Our standard limit is 3 requests per second per application. If you believe that your application will sustain traffic load above this value, contact the SDS Team at email [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk)
 
+## Getting help and support
+
+Before contacting us, find out if there is planned API downtime or a technical issue by checking [HMRC API Platform Status](https://api-platform-status.production.tax.service.gov.uk/).
+
+If you have specific questions about the NOP waiver checker API, [contact our Software Developer Support (SDS) Team](https://developer.service.hmrc.gov.uk/developer/support). You'll get an initial response within 2 working days.
+
+You can also email questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We might ask for more detailed information when we respond.
+
 ## Changelogs
 
 ### API changelog
@@ -216,11 +224,3 @@ Below is a summary of updates to this service guide.
 **24 June 2024**
 
 - Initial draft created
-
-## Getting help and support
-
-Before contacting us, find out if there is planned API downtime or a technical issue by checking [HMRC API Platform Status](https://api-platform-status.production.tax.service.gov.uk/).
-
-If you have specific questions about the NOP waiver checker API, [contact our Software Developer Support (SDS) Team](https://developer.service.hmrc.gov.uk/developer/support). You'll get an initial response within 2 working days.
-
-You can also email questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We might ask for more detailed information when we respond.
