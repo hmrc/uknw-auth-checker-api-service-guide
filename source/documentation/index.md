@@ -178,7 +178,7 @@ This is a high-level overview of how to use this API to check the authorisation 
 
 A detailed description of the error responses for this API can be found in the [NOP waiver checker API v1.0 reference guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0).
 
-**Note:** The NOP waiver API is restricted to CSPs and the above link will not be accessible to other users.
+**Note:** The NOP waiver checker API is restricted to CSPs and the above link will not be accessible to other users.
 
 ## API rate limiting
 
@@ -194,6 +194,13 @@ If you have specific questions about the NOP waiver checker API, [contact our So
 
 You can also email questions to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk). We might ask for more detailed information when we respond.
 
+## Related API documentation
+
+- [NOP waiver checker API reference guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0)
+- [NOP waiver checker API roadmap](/roadmaps/uknw-auth-checker-api-roadmap/)
+- [Changelogs](/guides/uknw-auth-checker-api-service-guide/#changelogs)
+
+
 ## Changelogs
 
 ### API changelog
@@ -204,9 +211,10 @@ The [NOP API Changelog](https://github.com/hmrc/uknw-auth-checker-api/blob/main/
 
 Below is a summary of updates to this service guide.
 
-**12 August 2024**
+**13 August 2024**
 
 - Added [Getting help and support section](/guides/uknw-auth-checker-api-service-guide/#getting-help-and-support)
+- Added [Related API documentation section](/guides/uknw-auth-checker-api-service-guide/#related-api-documentation)
 
 **6 August 2024**
 
