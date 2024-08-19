@@ -6,7 +6,7 @@ Version 1.0 issued 24 June 2024
 
 # Notification of Presentation (NOP) waiver checker service guide
 
-This guide explains how Community System Providers (CSPs) can use the NOP waiver checker API. It details the process of passing Economic Operators Registration and Identification (EORI) numbers to check NOP waiver validity. 
+This guide explains how Community System Providers (CSPs) can use the NOP waiver checker API. It details the process of passing EORI numbers to check NOP waiver validity. 
 
 It is also intended to help software developers and others involved in integrating software that connects to NOP waiver checker API.
 
@@ -14,7 +14,7 @@ It is also intended to help software developers and others involved in integrati
 
 ## Overview
 
-This API allows CSPs to check if traders have a valid NOP waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from Great Britain to Northern Ireland. 
+This API enables CSPs to check if traders have a valid NOP waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from Great Britain to Northern Ireland. 
 
 The API follows REST principles and has a single POST method endpoint that returns the data in JSON format. It uses standard HTTP error response codes. Use this API to request the NOP waiver authorisation status of between 1 and 3000 EORI numbers passed as an array. 
 
@@ -22,13 +22,13 @@ The API follows REST principles and has a single POST method endpoint that retur
 
 ### What is an EORI number?
 
-EORI stands for Economic Operators Registration and Identification. It is a unique identification number used by customs authorities across the European Union (EU) to track imports and exports. Any business or individual shipping goods internationally will have an EORI number. This API uses this number to check the authorisation of NOP waivers. This system replaced the older Trader's Unique Reference Number (TURN) system. For those in the UK, HM Revenue and Customs (HMRC) issues these numbers.
+EORI stands for Economic Operators Registration and Identification. It is a unique identification number used by customs authorities across the European Union (EU) to track imports and exports. Any business or individual shipping goods internationally will have an EORI number. This API uses this number to check the authorisation of NOP waivers. This system replaced the older Trader's Unique Reference Number (TURN) system. For those in the UK, HMRC issues these numbers.
 
 A typical EORI number for UK VAT-registered businesses is as follows:
 
 ```text
-GB205672212000	# EORI originating in GB (Wales, England or Scotland)
-XI347643313000  # EORI originating in NI
+GB205672212000	# EORI number originating in GB (Wales, England or Scotland)
+XI347643313000  # EORI number originating in NI
 ```
 
 Below is a breakdown of this EORI number format:
@@ -36,7 +36,7 @@ Below is a breakdown of this EORI number format:
 - GB or XI: Indicates that the business is based either in GB or NI (XI).
 - 205672212 or 347643313: Represents the business's VAT Registration Number.
 - 000: These three zeros are always added to the end of an EORI number.
-- Total number of characters permitted for the EORI (including the prefix GB or XI) is between 12 and 15.
+- total number of characters permitted for the EORI number (including the prefix GB or XI) is between 12 and 15.
 
 In summary, having an EORI number is essential for anyone involved in international trade, as it allows customs authorities to monitor and track shipments effectively.
 
@@ -62,19 +62,19 @@ This version of the NOP waiver checker API:
 
 Use this API to:
 
-- Request the NOP waiver authorisation status of 1-3000 EORIs passed as an array.
-- Run tests in the HMRC sandbox environment.
+- request the NOP waiver authorisation status of 1-3000 EORI numbers passed as an array
+- run tests in the HMRC sandbox environment
 
 ## Developer setup
 
-In the context of this API, the term "developer" refers to software developers who either work directly for CSPs or are contracted to CSPs through third parties.
+In the context of this API, the term 'developer' refers to software developers who either work directly for CSPs or are contracted to CSPs through software providers.
 
 ### Getting started
 
 Developers must follow the steps below before you can use your software in the test and live environment and access this API:
 
-1. **[Register for a developer account](https://developer.service.hmrc.gov.uk/developer/registration)** on the HMRC Developer Hub. 
-2. To **create** a sandbox application, follow the instructions on [Using the Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub)
+1. **[Sign up for a developer account](https://developer.service.hmrc.gov.uk/developer/registration)** on the HMRC Developer Hub. 
+2. To **create** a sandbox application, follow the instructions on [Using the Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub).
 3. As the API is private, please contact [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk) with your sandbox application ID and name. The Software Developer Support (SDS) Team will then **subscribe** your sandbox application to the NOP waiver checker API.
 4. **Learn** about the [application-restricted endpoints](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/application-restricted-endpoints) featured in this API. It uses the open standard [OAuth2.0](https://oauth.net/2/) with the [Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/) to generate an access token.
 
@@ -113,7 +113,7 @@ Production https://api.service.hmrc.gov.uk/customs/uk-notice-of-presentation-wai
 
 ### Developer journey overview
 
-Follow this end-to-end journey to setup your developer environment, request NOP waiver authorisation using EORIs, and move your application to production.
+Follow this end-to-end journey to setup your developer environment, request NOP waiver authorisation using EORI numbers, and move your application to production.
 
 1. **Complete** [Developer setup](/guides/uknw-auth-checker-api-service-guide/#developer-setup) instructions.
 2. **Read** [Making API requests](/guides/uknw-auth-checker-api-service-guide/#making-api-requests) guidance.
@@ -181,7 +181,7 @@ A detailed description of the error responses for this API can be found in the [
 
 Each software house should register a single application with HMRC. This application will be used to identify the software house during the OAuth 2.0 grant flow and will also be used in subsequent per user API calls. We limit the number of requests that each application can make. This protects our backend service against excessive load and encourages real-time API calls over batch processing.
 
-We set limits based on anticipated loads and peaks. Our standard limit is 3 requests per second per application. If you believe that your application will sustain traffic load above this value, contact the SDS Team at email [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk)
+We set limits based on anticipated loads and peaks. Our standard limit is 3 requests per second per application. If you believe that your application will sustain traffic load above this value, contact the SDS Team at email [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk).
 
 ## Getting help and support
 
@@ -224,7 +224,7 @@ Below is a summary of updates to this service guide.
 
 **11 July 2024**
 
-- Updated content for [What is an EORI number section](/guides/uknw-auth-checker-api-service-guide/#what-is-an-eori-number)
+- Updated content for [What is an EORI number? section](/guides/uknw-auth-checker-api-service-guide/#what-is-an-eori-number)
 
 **24 June 2024**
 
