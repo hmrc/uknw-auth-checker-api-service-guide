@@ -94,7 +94,7 @@ Before sending any requests to the NOP waiver checker API, make sure that you ar
 - the correct URL for the environment and API version number
 - the correct header contents and payload information
 
-For details, see the [NOP waiver checker API v1.0 Reference Guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0). 
+For details, see the [NOP waiver checker API v1.0 reference guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0). 
 
 **Note:** The NOP waiver API is restricted to CSPs and the above link will not be accessible to other users.
 
