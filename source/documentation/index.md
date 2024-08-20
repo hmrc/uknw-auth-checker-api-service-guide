@@ -42,7 +42,7 @@ In summary, having an EORI number is essential for anyone involved in internatio
 
 ## API workflow
 
-<img src="../images/NOP_Authorisation__Sequence_diagram_Service_Guide.svg" alt="NOP waiver checker API sequence diagram">
+<img src="images/NOP_Authorisation__Sequence_diagram_Service_Guide.svg" alt="NOP waiver checker API sequence diagram">
 
 This sequence diagram outlines the process for checking authorisations using the NOP waiver checker API. Below is an explanation of each step involved in the workflow:
 
