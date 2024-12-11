@@ -164,12 +164,12 @@ Example of a successful response:
 This is a high-level overview of how to use this API to check the authorisation of traders' NOP waivers.
 
 1. **Integrate the API:** Developers should follow the [Developer journey overview](/guides/uknw-auth-checker-api-service-guide/#developer-journey-overview) to integrate the NOP waiver checker API into your software with a corresponding user interface (UI). 
-2. **Trader completes C21 form:** To send goods between GB and NI, a trader must complete and submit a [C21 form](https://www.gov.uk/government/publications/import-and-export-customs-clearance-request-c21). 
-3. **Check trader credentials:** If the trader does not have [Authorised Economic Operator status](https://www.gov.uk/government/publications/check-if-a-business-holds-authorised-economic-operator-status), their NOP waiver authorisation status must be checked.  
-4. **Access the API:** Use the UI created by your developers to access the API.
+2. **Trader confirms they would like to use their NOP waiver for the movement.**
+3. **Check trader credentials:** Check if the trader has a NOP waiver.
+4. **Access the API:** Use the UI created by your developers to access the API.
 5. **Check NOP waiver status:** Use the API to verify the traders' NOP Wavier authorisation.
 6. **Authorise EIDR:** Authorise the trader for Entry in Declarants Records (EIDR) once NOP waiver status is verified.
-7. **Goods are shipped:** The trader can now ship the goods between GB and NI.
+7. **Goods are cleared:** The trader can now clear the goods between GB and NI
 
 ## Error responses
 
