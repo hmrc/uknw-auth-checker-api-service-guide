@@ -10,7 +10,7 @@ This guide explains how Community System Providers (CSPs) can use the NOP waiver
 
 It is also intended to help software developers and others involved in integrating software that connects to NOP waiver checker API.
 
-**Note:** The NOP waiver checker API is restricted to CSPs and not available to other users.
+**Note:** The NOP waiver checker API is only for use by CSPs and agents at inventory linked ports for the purposes of validating the NOP waiver, and for software developers supporting those parties.
 
 ## Overview
 
