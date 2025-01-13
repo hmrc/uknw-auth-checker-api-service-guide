@@ -6,7 +6,7 @@ Version 1.0 issued 24 June 2024
 
 # Notification of Presentation (NOP) waiver checker service guide
 
-This guide explains how Community System Providers (CSPs) can use the NOP waiver checker API. It details the process of passing EORI numbers to check NOP waiver validity. 
+This guide explains how Community System Providers (CSPs) and agents can use the NOP waiver checker API. It details the process of passing EORI numbers to check NOP waiver validity.
 
 It is also intended to help software developers and others involved in integrating software that connects to NOP waiver checker API.
 
@@ -14,9 +14,9 @@ It is also intended to help software developers and others involved in integrati
 
 ## Overview
 
-This API enables CSPs to check if traders have a valid NOP waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from Great Britain to Northern Ireland. 
+This API enables agents and CSPs to check if traders have a valid NOP waiver authorisation using their EORI number. This waiver is required for the transit of Not At Risk (NAR) goods moving through from Great Britain to Northern Ireland.
 
-The API follows REST principles and has a single POST method endpoint that returns the data in JSON format. It uses standard HTTP error response codes. Use this API to request the NOP waiver authorisation status of between 1 and 3000 EORI numbers passed as an array. 
+The API follows REST principles and has a single POST method endpoint that returns the data in JSON format. It uses standard HTTP error response codes. Use this API to request the NOP waiver authorisation status of between 1 and 3000 EORI numbers passed as an array.
 
 **Note:** The API endpoint relates only to GB and NI.
 
@@ -169,7 +169,7 @@ This is a high-level overview of how to use this API to check the authorisation 
 4. **Access the API:** Use the UI created by your developers to access the API.
 5. **Check NOP waiver status:** Use the API to verify the traders' NOP Wavier authorisation.
 6. **Authorise EIDR:** Authorise the trader for Entry in Declarants Records (EIDR) once NOP waiver status is verified.
-7. **Goods are cleared:** The trader can now clear the goods between GB and NI
+7. **Goods are cleared:** The trader can now clear the goods between GB and NI.
 
 ## Error responses
 
