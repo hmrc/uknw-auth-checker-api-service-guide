@@ -175,7 +175,7 @@ This is a high-level overview of how to use this API to check the authorisation 
 
 A detailed description of the error responses for this API can be found in the [NOP waiver checker API v1.0 reference guide](/api-documentation/docs/api/service/uknw-auth-checker-api/1.0).
 
-**Note:** The NOP waiver checker API is restricted to CSPs and the above link will not be accessible to other users.
+**Note:** The NOP waiver checker API is restricted to CSPs and agents at inventory linked ports and for software developers supporting those parties.
 
 ## API rate limiting
 
