@@ -55,10 +55,7 @@ This sequence diagram outlines the process for checking authorisations using the
 
 This version of the NOP waiver checker API:
 
-- is in [the alpha phase](https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works)
-- supports **only** the NOP waiver checker API v1.0
-- is currently **not** ready for testing
-- will **not** be ready for use in production until the service goes live
+- is live in production and available for testing
 
 Use this API to:
 
