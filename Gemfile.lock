@@ -46,6 +46,9 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.3.1)
     ffi (1.17.0)
+    google-protobuf (4.29.2-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
     google-protobuf (4.29.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
@@ -156,7 +159,7 @@ GEM
     parslet (2.0.0)
     public_suffix (6.0.1)
     racc (1.8.1)
-    rack (2.2.11)
+    rack (2.2.10)
     rack-livereload (0.3.17)
       rack
     rake (13.2.1)
@@ -196,6 +199,7 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  aarch64-linux
   x86_64-linux
 
 DEPENDENCIES

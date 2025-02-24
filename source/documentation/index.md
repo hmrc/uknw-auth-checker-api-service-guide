@@ -174,6 +174,12 @@ A detailed description of the error responses for this API can be found in the [
 
 **Note:** The NOP waiver checker API is restricted to CSPs and agents at inventory linked ports and for software developers supporting those parties.
 
+## Test data
+
+Any EORI number in the [test-authorised-eoris](files/test-authorised-eoris.txt) file may be used in the sandbox environment to return an **authorised = true** response.
+
+Valid EORI numbers which are not in the [test-authorised-eoris](files/test-authorised-eoris.txt) file will return **authorised = false** in the sandbox environment.
+
 ## API rate limiting
 
 Each software house should register a single application with HMRC. This application will be used to identify the software house during the OAuth 2.0 grant flow and will also be used in subsequent per user API calls. We limit the number of requests that each application can make. This protects our backend service against excessive load and encourages real-time API calls over batch processing.
