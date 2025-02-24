@@ -178,7 +178,7 @@ A detailed description of the error responses for this API can be found in the [
 
 Any EORI number in the [test-authorised-eoris](files/test-authorised-eoris.txt) file may be used in the sandbox environment to return an **authorised = true** response.
 
-Valid EORI numbers which are not in the [test-authorised-eoris](files/test-authorised-eoris.txt) file will return **authorised = false** in the sandbox environment.
+Valid EORI numbers which are not in the [test-authorised-eoris](files/test-authorised-eoris.txt) file will return **authorised = false** in the sandbox environment. A valid EORI in the false scenario can be any randomly generated EORI that follows the [EORI number format](#what-is-an-eori-number).
 
 ## API rate limiting
 
