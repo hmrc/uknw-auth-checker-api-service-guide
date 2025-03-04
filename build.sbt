@@ -1,6 +1,6 @@
 val appName = "uknw-auth-checker-api-service-guide"
 
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.16"
 
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
 ThisBuild / semanticdbEnabled := true
