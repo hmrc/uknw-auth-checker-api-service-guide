@@ -3,6 +3,7 @@ service_name: Notice of Presentation Waiver Checker Service Guide
 
 # The route that will be used to access this site (with tailing slash)
 service_link: /guides/uknw-auth-checker-api-service-guide/
+use_service_link_for_favicon: true
 
 # ================================================
 # You shouldn't need to edit anything below here
