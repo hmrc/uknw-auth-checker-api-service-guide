@@ -12,7 +12,6 @@ lazy val microservice = Project(appName, file("."))
   .settings(
     majorVersion := 0,
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
-    update / evictionWarningOptions := EvictionWarningOptions.default.withWarnScalaVersionEviction(false)
   )
   .settings(scalacOptions ++= Seq("-language:postfixOps"))
   .settings(
