@@ -195,6 +195,10 @@ The [NOP API changelog GitHub](https://github.com/hmrc/uknw-auth-checker-api/blo
 
 ### Document changelog
 
+**28 July 2025**
+
+- General copy edit
+
 **13 August 2024**
 
 - Added [Getting help and support](/guides/uknw-auth-checker-api-service-guide/#getting-help-and-support)
